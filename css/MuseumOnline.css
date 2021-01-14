@@ -56,7 +56,8 @@ body {
 .topnav-right a {
   float: right;
   background-color: #333;
-  box-sizing:border-box}
+  box-sizing:border-box
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -154,15 +155,25 @@ body {
 /* Quiz Link Box */
 
 .quizbox {
-  margin-top: 50px;
+  margin: 200px;
+  margin-bottom: 50px;
   display: flex;
-  flex-flow: row wrap;
+  align-items: center;
+  flex-flow: column wrap;
   padding: 50px;
   color: #ddd;
+  background-color: rgba(255,255,255,.4);
 }
 
-.toquiz {
-  
+.quizboxtext {
+  color: black;
+}
+
+.quizbutton {
+  background-color: #6699FF;
+  padding: 10px;
+  border-radius: 12.5px;
+  border-color: #6699FF;
 }
 
 /* Footer */
@@ -173,6 +184,7 @@ footer {
   padding: 15px;
   color: whitesmoke;
   background-color: #333;
+  position: relative;
 }
 h2 {
   font-weight: 600;
@@ -214,6 +226,17 @@ h2 {
 
 .box a {
   color: #ffffff;
+}
+
+.buttontotop {
+  background-color: #6699FF;
+  padding: 10px;
+  border-radius: 12.5px;
+}
+
+.buttontotop a {
+  text-decoration: none;
+  color: black;
 }
 
 @media screen and (min-width: 600px){
