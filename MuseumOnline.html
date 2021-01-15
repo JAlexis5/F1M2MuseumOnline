@@ -1,118 +1,131 @@
 <!doctype html>
-<html>
-<head>
-    <link rel="stylesheet" href="css/MuseumOnline.css">
-    <link rel="script" href="MuseumOnline.js">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Museum Online</title>
+    <html>
+        <link rel="stylesheet" href="css/MuseumOnline.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<header>
-
-    <div class="topnav">
-        <a class="active" href="https://www.lamlisse.nl/">
-            <img alt="Lamlisselogo" src="https://www.lamlisse.nl/wp-content/uploads/2018/03/LAM-Lisse-logo-white.svg"
-            width="150" height="60">
-        <div class="topnav-right">
-            <a href="https://www.lamlisse.nl/">Home</a>
-            <a href="https://www.lamlisse.nl/bezoek-het-lam/">Bezoek het LAM</a>
-            <a href="https://www.lamlisse.nl/tickets/">Tickets</a>
-            <a href="https://www.lamlisse.nl/laatste-nieuws/">Nieuws</a>
-            <a href="https://www.lamlisse.nl/ontdek-het-lam/de-organisatie-achter-het-lam/">Organisatie</a>
-            <a href="https://www.lamlisse.nl/miniserie/hoe-werkt-het-lam/">Bekijk de video's</a>
-            <a href="Quiz">Quiz</a>
-            <a href="https://www.lamlisse.nl/contact/">Contact</a>
-        </div>
-      </div>
-</header>
-
 <body>
-
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
-
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="randomfoto1.jpg" style="width:100%">
-            <div class="text">LAM FOTO</div>
-        </div>
-        
-        <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="randomfoto2.jpg"style="width:100%">
-            <div class="text">LAM FOTO</div>
-        </div>
-        <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="randomfoto3.jpg" style="width:100%">
-            <div class="text">LAM FOTO</div>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <header>
+        <div class="topnav">
+            <a class="active" href="https://www.lamlisse.nl/">
+                <img alt="Lamlisselogo" src="https://www.lamlisse.nl/wp-content/uploads/2018/03/LAM-Lisse-logo-white.svg"
+                width="150" height="30">
+            <div class="topnav-right">
+                <a href="https://www.lamlisse.nl/">Home</a>
+                <a href="https://www.lamlisse.nl/bezoek-het-lam/">Bezoek het LAM</a>
+                <a href="https://www.lamlisse.nl/tickets/">Tickets</a>
+                <a href="https://www.lamlisse.nl/laatste-nieuws/">Nieuws</a>
+                <a href="https://www.lamlisse.nl/ontdek-het-lam/de-organisatie-achter-het-lam/">Organisatie</a>
+                <a href="https://www.lamlisse.nl/miniserie/hoe-werkt-het-lam/">Bekijk de video's</a>
+                <a href="Quiz">Quiz</a>
+                <a href="https://www.lamlisse.nl/contact/">Contact</a>
             </div>
-        <br>
-        
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
+    </header>
+    
+
+    <div class="quizbox">
+        <h2 class="quizboxtext">Weet je nog niet zeker of je wilt komen?</h2><br>
+        <p class="quizboxtext">Doe dan de Quiz! Kijk welk kunstwerk bij jou past door een aantal vragen te beantwoorden!</p><br>
+        <br>
+        <a class="quizbutton" href="quiz.html">Door naar Quiz</a>
     </div>
 
-    <section>
-        <div class="quizbox">
-            <h2 class="quizboxtext">Weet je nog niet zeker of je wilt komen?</h2><br>
-            <p class="quizboxtext">Doe dan de Quiz! Kijk welk kunstwerk bij jou past door een aantal vragen te beantwoorden!</p><br>
-            <br>
-            <a class="quizbutton" href="quiz.html">Door naar Quiz</a>
-        </div>
-    </section>
+
+    <div class="slideshow-container">
+    <div class="mySlides fade">
+        <img src="../randomfoto1.jpg" style="width:100vw; height: 100%;" alt="Foto van het LAM">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="../randomfoto2.jpg" style="width:100%" alt="Foto van het LAM">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="../randomfoto3.jpg" style="width:100%" alt="Foto van het LAM">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+    </script>
+
+
+
 
 </body>
 
 <footer class="footer">
-    <ul class="footer-right">
-        <li>
-            <h2>Navigatie</h2>
+<ul class="footer-right">
+    <li>
+        <h2>Navigatie</h2>
 
-            <ul class="box">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Bezoek het LAM</a></li>
-                <li><a href="#">Tickets</a></li>
-                <li><a href="#">Nieuws</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </li>
+        <ul class="box">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Bezoek het LAM</a></li>
+            <li><a href="#">Tickets</a></li>
+            <li><a href="#">Nieuws</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </li>
 
-        <li>
-            <h2>Contactgegevens</h2>
+    <li>
+        <h2>Contactgegevens</h2>
 
-            <ul class="box">
-                <li>Keukenhof 14 2161 AN Lisse</li>
-                <br>
-                <li>Postbus 224</li>
-                <li>2170 AE Sassenheim</li>
-                <li><a href="tel: 0252508800">0252 508 800</a></li>
-                <li><a href="mailto: info@lamlisse.nl">info@lamlisse.nl</a></li>
-            </ul>
-        </li>
+        <ul class="box">
+            <li>Keukenhof 14 2161 AN Lisse</li>
+            <br>
+            <li>Postbus 224</li>
+            <li>2170 AE Sassenheim</li>
+            <li><a href="tel: 0252508800">0252 508 800</a></li>
+            <li><a href="mailto: info@lamlisse.nl">info@lamlisse.nl</a></li>
+        </ul>
+    </li>
 
-        <li>
-            <h3>Blijf op de hoogte van het LAM!</h3>
-            <input type="email" placeholder="Hier uw email...">
-        </li>
+    <li>
+        <h3>Blijf op de hoogte van het LAM!</h3>
+        <input type="email" placeholder="Hier uw email...">
+    </li>
 
-    </ul>
+</ul>
 
-    <div class="footer-bottom">
-        <li><img src="https://www.lamlisse.nl/wp-content/uploads/2018/03/LAM-Lisse-logo-white.svg" width="120" height="48" alt=""></img></li>
-        <li><p>Copyright &copy; Mediacollege Amsterdam 2021</p></li>
-        <li><a class="buttontotop" href="#top">Terug naar top</a></li>
-    </div>
+<div class="footer-bottom">
+    <li><img src="https://www.lamlisse.nl/wp-content/uploads/2018/03/LAM-Lisse-logo-white.svg" width="120" height="48" alt=""></img></li>
+    <li><p>Copyright &copy; Mediacollege Amsterdam 2021</p></li>
+    <li><a class="buttontotop" href="#top">Terug naar top</a></li>
+</div>
 </footer>
+
 </html>
