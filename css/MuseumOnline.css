@@ -126,15 +126,14 @@ img {vertical-align: middle;}
 
 .quizbox {
   display: flex;
+  position: relative;
   justify-content: center;
+  
   align-items: center;
   flex-flow: column wrap;
-  top: 25%;
-  left: 25%;
   margin-left: auto;
   margin-right: auto;
-  padding: auto;
-  background-color: rgba(255,255,255,.75);
+  background-color: #986f51;
   z-index: 2;
 }
 
@@ -154,8 +153,7 @@ img {vertical-align: middle;}
 footer {
   display: flex;
   flex-flow: row wrap;
-  padding-top: 10px;
-  padding: 30px;
+  padding: 0 30px;
   color: whitesmoke;
   background-color: #333;
 }
@@ -202,14 +200,14 @@ text-align: center;
 }
 
 .buttontotop {
-  background-color: #6699FF;
+  background-color: #986f51;
   padding: 10px;
   border-radius: 12.5px;
 }
 
-.buttontotop a {
+.footer-bottom .buttontotop a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 
 @media screen and (min-width: 600px){
